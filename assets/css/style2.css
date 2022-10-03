@@ -1,0 +1,662 @@
+/* Construction de mon fichier CSS */
+/* 1. Je customise les éléments globaux (p, a, h1, h2, etc..) + bouton */
+
+@font-face {
+    font-family: "Calibri Regular";
+    src: url(../fonts/calibri-regular.ttf);
+}
+
+*, body {
+    margin: 0;
+    font-family: "Calibri Regular";
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* EFFACEMENT PREMIER LABEL POUR RESPONSIVE */
+header label
+{
+    display: none;
+}
+
+/* CUSTOMISATION HEADER */
+
+.main-menu{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 1.5rem 0;
+    margin: auto 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-image: url(../img/logo-er.png);
+    background-repeat: no-repeat;
+    background-position: 2rem 0.5rem;   
+    background-size: 6rem;
+    object-fit: cover;
+}
+
+.main-menu .main-menu-element {
+    list-style: none;
+    padding: 0 1.5rem;
+}
+
+.index .main-menu .main-menu-element:nth-child(1){
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.pre .main-menu .main-menu-element:nth-child(2){
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.comp .main-menu .main-menu-element:nth-child(3){
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.rea .main-menu .main-menu-element:nth-child(4){
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.cont .main-menu .main-menu-element:nth-child(5){
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.main-menu .main-menu-element a:hover {
+    color: #730800;
+    text-decoration: underline #730800;
+    text-underline-offset: 0.5rem;
+    transition: 0.25s ease;
+}
+
+/* POUR RAJOUTER DES BORDURES SUR LE MENU */
+.main-menu .main-menu-element:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+/* CUSTOMISATION ACCUEIL */
+
+#accueil,#presentation,#competences,#realisations,#contact {
+   background-image: url(../img/chilli-pepper-g24c59bee0_1920.jpg);
+    height:80vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+/* CUSTOMISATION DE CHAQUE RECTANGLE */
+
+.couleur{
+    width: 40%;
+    height: 40%;
+   
+    margin: 0.5rem;
+    border-radius: 10px;
+    perspective: 25rem;
+    cursor: pointer;
+    transform: rotateY(-20deg) rotateX(15deg);
+    transition: 0.7s;
+}
+
+.couleur .btn{
+    color:white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}    
+
+.couleur:nth-child(odd){
+    border:2rem solid #730800;
+    margin-right: 0;   
+}
+
+.couleur:nth-child(even){
+    border:2rem solid  #194536;
+    margin-left: 0;   
+}
+
+.couleur:hover{
+    transform: translateY(30px)  rotateY(-20deg) rotateX(15deg) scale(1.2);
+    z-index:3; 
+}
+
+.couleur h3{
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 0;
+}
+
+.couleur img{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.couleur a h3:hover{
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+}
+
+.couleur ul{
+    padding-left: 4rem;
+    line-height: 2rem;
+}
+
+.couleur li{
+    padding-left: 2rem;
+    font-size: 1.5rem;
+}
+
+.couleur p{
+    padding-left: 4rem;
+    color: white;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+
+.couleur:nth-child(4) a>h3{
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    margin: 0;
+    transform: translate(-5vw,-21vh);
+    padding: 0.5rem 0.5rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}
+
+.couleur:nth-child(4) .btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+
+/* OMBRE ET EXPLOSION SUR ACCUEIL */
+
+#accueil .couleur:nth-child(odd) .btn h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5rem solid transparent;
+    box-shadow: 0 0 20px rgba(115,8,0, 1),
+                0 0 40px rgba(115,8,0, 1),
+                0 0 60px rgba(115,8,0, 1),
+                0 0 80px rgba(115,8,0, 1);
+}
+
+#accueil .couleur:nth-child(odd) .btn:hover{
+    box-shadow: 0 0 0 30px rgba(115,8,0, .1),
+                0 0 0 60px rgba(115,8,0, .1),
+                0 0 0 120px rgba(115,8,0, .1),
+                0 0 0 180px rgba(115,8,0, .1);               ;
+}
+
+#accueil .couleur:nth-child(even) .btn h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5rem solid transparent;
+    box-shadow: 0 0 20px rgba(25,69,54, 1),
+                0 0 40px rgba(25,69,54, 1),
+                0 0 60px rgba(25,69,54, 1),
+                0 0 80px rgba(25,69,54, 1);
+}
+
+#accueil .couleur:nth-child(even) .btn:hover{
+    box-shadow: 0 0 0 30px rgba(25,69,54,.1),
+                0 0 0 60px rgba(25,69,54,.1),
+                0 0 0 120px rgba(25,69,54,.1),
+                0 0 0 180px rgba(25,69,54,.1);               ;
+}
+
+/* CUSTOMISATION PRESENTATION */
+
+#presentation .couleur ul li:nth-child(1){
+    color: white;
+    list-style-type: "🎾";
+}
+
+#presentation .couleur ul li:nth-child(2){
+    color: white;
+    list-style-type: "🏉";
+}
+
+#presentation .couleur ul li:nth-child(3){
+    color: white;  
+    list-style-type: "🪐";
+}
+
+#presentation .couleur .btn{
+    display: inline-block;
+    color: #edcd7a;
+    font-weight: bolder;
+    padding: 0 0.1rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}
+
+#presentation .couleur .btn:hover{
+    color: black;
+    transition: 0.25s ease;
+}
+
+#presentation .couleur:nth-child(4) .btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+
+/* CUSTOMISATION COMPETENCES */
+
+#competences .couleur ul{
+    padding-left: 4rem;
+    line-height: 2rem;
+}
+
+#competences .couleur p{
+    padding-left: 4rem;
+    color: white;
+    line-height: 2rem;
+}
+
+#competences .couleur .btn{
+    color: #edcd7a;
+    font-weight: bolder;
+    padding: 0 0.1rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}
+
+#competences .couleur .btn:hover{
+    color: black;
+    transition: 0.25s ease;
+}
+
+#competences .couleur:nth-child(4) .btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+#competences li{
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+#competences .couleur:nth-child(1) ul{
+    color: white;
+    list-style-type: "💻";
+}
+
+#competences .couleur:nth-child(2) ul li:nth-child(1){
+    color: white;
+    list-style-type: "🇬🇧";
+}
+
+#competences .couleur:nth-child(2) ul li:nth-child(2){
+    color: white;
+    list-style-type: "🇩🇪";
+}
+
+#competences .couleur:nth-child(2) ul li:nth-child(3){
+    color: white;
+    list-style-type: "🔤";
+}
+
+#competences .couleur:nth-child(3) li:nth-child(1){
+    color: white;
+    list-style-type: "☣";
+}
+
+#competences .couleur:nth-child(3) li:nth-child(2){
+    color: white;
+    list-style-type: "🧐";
+}
+
+#competences .couleur:nth-child(3) li:nth-child(3){
+    color: white;
+    list-style-type: "✨";
+}
+
+#competences .couleur:nth-child(3) li:nth-child(4){
+    color: white;
+    list-style-type: "🌍";
+}
+
+#competences .couleur ul{
+    padding-left: 4rem;
+    line-height: 2rem;
+}
+
+#competences .couleur p{
+    padding-left: 4rem;
+    color: white;
+    line-height: 2rem;
+}
+
+#competences .couleur .btn{
+    color: #edcd7a;
+    font-weight: bolder;
+    padding: 0 0.1rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}
+
+#competences .couleur .btn:hover{
+    color: black;
+    transition: 0.25s ease;
+}
+
+
+
+/* CUSTOMISATION REALISATIONS */
+
+#realisations .couleur .btn{
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+#realisations .couleur a>h3{
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    margin: 0;
+    transform: translate(-5vw,-21vh);
+    padding: 0.5rem 0.5rem;
+    border-radius: 3px;
+    transition: 0.25s ease;
+}
+
+#realisations .couleur:nth-child(4) .btn{
+    margin-left:-1.9rem;
+}
+
+
+/* CUSTOMISATION CONTACT */
+
+#contact label:not(:last-child){
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 2rem;  
+}
+
+#contact label:last-child{
+    margin-left: 5rem;
+}
+
+#contact input{
+    margin-left: 1rem;
+}
+
+
+textarea{
+    resize: none;
+    float: right;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+#contact form input:hover{
+    color: #edcd7a;
+    transition: 0.25s ease;
+    cursor:grab;
+}
+
+#contact .couleur:nth-child(4) img{
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.7rem;
+}
+
+#contact .couleur ul{
+    padding-left: 4rem;
+    line-height: 2rem;
+}
+
+#contact .couleur:nth-child(4) li{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+}
+#contact .couleur:nth-child(4) a{
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding:0 1rem;
+    margin:0 1rem;
+}
+
+#contact .couleur:nth-child(even) a:hover{
+    color: black;
+    background:-webkit-linear-gradient(bottom, #edcd7a 0%, #edcd7a 30%, white 30%);
+    border-radius: 5px;
+}
+
+
+
+/* CUSTOMISATION BOUTON CENTRAL */
+
+.center{
+    width: 31%;
+    height: 15%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0,-47vh);
+    background-color: white;
+    text-align: center;
+    border: 0.2rem solid black;
+    border-radius:1rem;
+}
+
+.center img{
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.center img:hover{
+    width: 50%;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: 0.25s ease;
+}
+
+.center h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    flex-flow: row nowrap;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+
+
+/* CUSTOMISATION FOOTER */
+footer {
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer nav a:hover {
+    color: #730800;
+    text-decoration: underline #730800;
+    text-underline-offset: 0.5rem;
+    transition: 0.25s ease;
+}
+
+footer .footer-menu {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    flex-direction: row;
+    padding: 1.5rem 0;
+    margin: auto 0;
+}
+
+footer .footer-menu li a {
+    padding: 0 1rem;
+}
+
+footer .footer-menu li:not(:last-child) a {
+    border-right: 1px solid rgb(0, 0, 0);
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 992px) {
+    .couleur {
+        width: 30%;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 465vh;
+        justify-content: space-between;
+    }
+
+    main{
+        height: 90%;
+    }
+
+    nav
+    {
+        height: 60px;
+    }
+ 
+    nav .main-menu 
+    {
+        display: none;
+    }
+ 
+    header label{
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+
+    #accueil {
+        display: flex;
+        height: 150vh;
+        width: auto;
+        padding: 1rem 0;
+    }
+
+    #accueil .couleur{
+        width: 50%;
+    }
+
+    #accueil .couleur h3{
+        font-size: inherit;
+    }
+
+    #accueil .couleur p{
+        padding-left: 1rem;
+        font-size: inherit;
+    }
+    
+       
+    #accueil .center{
+    width: 90%;
+    transform: translate(0,18vh);
+    }
+
+    footer {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer nav{
+        height: auto;
+    }
+    footer .footer-menu {
+        flex-direction: column;
+        background-color: rgb(221, 221, 221);
+    }
+
+    footer .footer-menu li {
+        padding: 1rem;
+    }
+
+    footer .footer-menu li:not(:last-child) a {
+        border-right: none;
+    }
+
+}
