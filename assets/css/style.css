@@ -157,7 +157,7 @@ header label
 .couleur img{
     width: 90%;
     height: 90%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
     display: flex;
     justify-content: center;
