@@ -487,7 +487,9 @@ textarea{
     border-radius: 5px;
 }
 
-
+select{
+    margin-left:230px;
+}
 
 /* CUSTOMISATION BOUTON CENTRAL */
 
